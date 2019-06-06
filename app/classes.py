@@ -26,6 +26,10 @@ class Salon(object):
     @classmethod
     def sell_auto(cls, label='BMW'):
         if label in cls.auto_list:
-            return f'{label} sealed'
+            return f'{label} sold'
         else:
             return 'Wrong model'
+
+    @staticmethod
+    def convert_price(price=100, tax=2.2):
+        return price * tax

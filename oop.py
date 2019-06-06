@@ -5,16 +5,19 @@ def main():
     my_auto_1 = Automobile('red', 5)
     my_auto_2 = Automobile(doors=7)
 
-    # print(my_auto_1)
-    # print(my_auto_2)
+    print(my_auto_1)
+    print(my_auto_2)
 
-    # print(Salon.auto_list)
 
     Salon.view_list()
 
-    sealed = Salon.sell_auto('PORSCHE')
+    sold = Salon.sell_auto('PORSCHE')
 
-    print(sealed)
+    price = Salon.convert_price(200, 27)
+
+    print(price)
+
+    print(sold)
 
 
 if __name__ == '__main__':
