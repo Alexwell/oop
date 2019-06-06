@@ -23,6 +23,9 @@ class Salon(object):
     def view_list(cls):
         print(cls.auto_list)
 
-    @staticmethod
-    def sell_auto(label='BMW'):
-        return f'{label} sealed'
+    @classmethod
+    def sell_auto(cls, label='BMW'):
+        if label in cls.auto_list:
+            return f'{label} sealed'
+        else:
+            return 'Wrong model'

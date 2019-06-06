@@ -10,9 +10,9 @@ def main():
 
     # print(Salon.auto_list)
 
-    # Salon.view_list()
+    Salon.view_list()
 
-    sealed = Salon.sell_auto('AUDI')
+    sealed = Salon.sell_auto('PORSCHE')
 
     print(sealed)
 
