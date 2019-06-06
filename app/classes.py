@@ -33,3 +33,25 @@ class Salon(object):
     @staticmethod
     def convert_price(price=100, tax=2.2):
         return price * tax
+
+
+class Book(object):
+    def __init__(self, author='Some author', book_name='Some book', year=2019, genre='CS'):
+        self.author = author
+        self.book_name = book_name
+        self.year = year
+        self.genre = genre
+
+    def __repr__(self):
+        return f'<author: {self.author}, book_name: {self.book_name}>'
+
+    def __str__(self):
+        return f'This is {self.book_name}'
+
+    def __eq__(self, other):
+        return self.year == other.year or self.book_name == other.book_name
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+
