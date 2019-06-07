@@ -1,4 +1,4 @@
-from app.classes import Automobile, Salon, Book
+from app.classes import Automobile, Salon, Book, ReviewBook
 
 
 def main():
@@ -18,14 +18,32 @@ def main():
     b2 = Book('Pushkin', 'Onegin', 1845, 'Poetry')
     b3 = Book('Lermontov', 'Hero of our time', 1845, 'Poetry')
 
-    print(b1)
-    print(b1.__repr__())
+    # print(b1)
+    # print(b1.__repr__())
+    #
+    # print(b2)
+    # print(b2.__repr__())
+    #
+    # print(b2.__eq__(b1), b2.__ne__(b1))
+    # print(b2.__eq__(b3), b2.__ne__(b3))
 
-    print(b2)
-    print(b2.__repr__())
+    r1 = ReviewBook('Vasya', 'Good book about Onegin')
+    r2 = ReviewBook('Petya', 'Very good book about Onegin')
+    r3 = ReviewBook('Ashot', 'pretty book')
 
-    print(b2.__eq__(b1), b2.__ne__(b1))
-    print(b2.__eq__(b3), b2.__ne__(b3))
+    # print(r1)
+
+    b4 = Book('Pushkin', 'Onegin', 1845, 'Poetry', review_list=[r1, r2, r3])
+
+    b4.review_list = [
+        ReviewBook('Ira', 'Good!!!'),
+        ReviewBook('Dusya', 'Not bed!!!')
+    ]
+    print(b4)
+    # print(b4.review_list)
+
+    # for i in b4.review_list:
+    #     print(i)
 
 
 if __name__ == '__main__':

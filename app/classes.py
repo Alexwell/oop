@@ -36,17 +36,26 @@ class Salon(object):
 
 
 class Book(object):
-    def __init__(self, author='Some author', book_name='Some book', year=2019, genre='CS'):
+    def __init__(self, author='Some author', book_name='Some book', year=2019, genre='CS', review_list=[]):
         self.author = author
         self.book_name = book_name
         self.year = year
         self.genre = genre
+        self.review_list = review_list
 
     def __repr__(self):
         return f'<author: {self.author}, book_name: {self.book_name}>'
 
+    # def __str__(self):
+    #     comments = '\n'.join(map(str, self.review_list))
+    #     return f'This is {self.book_name}\nreview: {self.review_list}' + comments
+
     def __str__(self):
-        return f'This is {self.book_name}'
+        comments = []
+        for i in self.review_list:
+            comments.append(i.review_author)
+            comments.append(i.review_text)
+        return f'This is {self.book_name}\nreview: {str(comments)}'
 
     def __eq__(self, other):
         return self.year == other.year or self.book_name == other.book_name
@@ -55,3 +64,10 @@ class Book(object):
         return not self.__eq__(other)
 
 
+class ReviewBook(object):
+    def __init__(self, review_author='some author', review_text='some review text'):
+        self.review_author = review_author
+        self.review_text = review_text
+
+    def __str__(self):
+        return f'review author: {self.review_author}\nreview text: {self.review_text}'
