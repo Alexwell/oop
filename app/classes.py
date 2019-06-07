@@ -71,3 +71,40 @@ class ReviewBook(object):
 
     def __str__(self):
         return f'review author: {self.review_author}\nreview text: {self.review_text}'
+
+
+class Temperature(object):
+    def __init__(self):
+        self._temperature_value = 20
+
+    def get_temperature_value(self):
+        return self._temperature_value
+
+    def set_temperature_value(self, value=20):
+        self._temperature_value = value
+
+    def del_temperature_value(self):
+        del self._temperature_value
+
+
+class TemperatureWithProperties(object):
+    def __init__(self):
+        self._temperature_value = 20
+
+    @property
+    def temperature_value(self):
+        return self._temperature_value
+
+    @temperature_value.setter
+    def temperature_value(self, value):
+        self._temperature_value = value
+
+    @temperature_value.deleter
+    def temperature_value(self):
+        del self._temperature_value
+
+    def to_fahr(self):
+        return (self.temperature_value * 1.8) + 32
+
+    def to_celcius(self):
+        return (self.temperature_value - 32) / 1.8
