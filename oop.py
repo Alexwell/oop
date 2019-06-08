@@ -1,4 +1,5 @@
-from app.classes import Automobile, Salon, Book, ReviewBook, Temperature, TemperatureWithProperties
+from app.classes import Automobile, Salon, Book, ReviewBook, Temperature, TemperatureWithProperties, \
+    Child, Base, Horse, Bird, Pegasus
 
 
 def main():
@@ -59,9 +60,9 @@ def main():
 
     t2 = TemperatureWithProperties()
 
-    print(t2.temperature_value)
+    # print(t2.temperature_value)
     t2.temperature_value = 40
-    print(t2.temperature_value)
+    # print(t2.temperature_value)
     # del t2.temperature_value
     #
     # try:
@@ -69,10 +70,29 @@ def main():
     # except AttributeError as e:
     #     print(e)
 
-    print(t2.to_fahr())
-    print(t2.to_celcius())
-    print(t2.temperature_value)
+    # print(t2.to_fahr())
+    # print(t2.to_celcius())
+    # print(t2.temperature_value)
 
+    base1 = Base()
+    child1 = Child()
+
+    # base1.method()
+    # child1.method()
+    # Base.method(base1)
+    # Base.method(child1)
+
+    horse = Horse()
+    bird = Bird()
+    pegasus = Pegasus()
+
+    horse.print_abilities()
+    bird.print_abilities()
+    pegasus.print_abilities()
+
+    # print(pegasus.__mro__)
+    print(Pegasus.__bases__)
+    print(Pegasus.__mro__)
 
 if __name__ == '__main__':
     main()
